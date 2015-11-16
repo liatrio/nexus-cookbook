@@ -1,8 +1,13 @@
+
 Description
 ===========
 
-Installs and configures Sonatype Nexus. Can optionally configure and install an nginx installation or provide
-SSL access to the Jetty server that runs Nexus.
+_vp_ 20151116
+
+run_list:
+* recipe[nexus::install]
+
+
 
 Requirements
 ============
