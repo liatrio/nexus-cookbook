@@ -54,11 +54,12 @@ default[:nexus][:work_dir]                                     = "/nexus/sonatyp
 
 default[:nexus][:app_server][:jetty][:loopback]                = false
 
+default[:nexus][:app_server_proxy][:ssl][:enabled]             = false
 default[:nexus][:app_server_proxy][:ssl][:port]                = 8443
-default[:nexus][:app_server_proxy][:ssl][:key]                 = node[:fqdn]
+default[:nexus][:app_server_proxy][:ssl][:key]                 = 'nexus.local'
 
-default[:nexus][:app_server_proxy][:use_self_signed]  = false
-default[:nexus][:app_server_proxy][:server_name]      = node[:fqdn]
+default[:nexus][:app_server_proxy][:use_self_signed]  = true
+default[:nexus][:app_server_proxy][:server_name]      = 'nexus.local'
 default[:nexus][:app_server_proxy][:port]             = "http://127.0.0.1:#{node[:nexus][:port]}"
 default[:nexus][:app_server_proxy][:server][:options] = [
   "client_max_body_size 200M",
